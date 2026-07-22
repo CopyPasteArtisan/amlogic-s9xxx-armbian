@@ -249,7 +249,7 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "6.12.y_6.18.y"
+        default: "6.1.y"
         type: choice
         options:
           - 5.10.y
@@ -271,7 +271,7 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "ophub/kernel"
+        default: "CopyPasteArtisan/kernel"
         type: choice
         options:
           - ophub/kernel
@@ -284,15 +284,6 @@ on:
           - stable
           - flippy
           - beta
-      kernel_sign:
-        description: "Set the tags of the stable kernel."
-        required: false
-        default: "user"
-        type: choice
-        options:
-          - ophub
-          - angel
-          - yourname
       armbian_fstype:
         description: "Set armbian rootfs type."
         required: false
@@ -310,6 +301,14 @@ on:
           - server
           - desktop
           - beta
+      armbian_size:
+        description: "Select armbian image size."
+        type: choice
+        required: false
+        default: "250/1331"
+        options:
+          - 250/1536
+          - 512/2560
       builder_name:
         description: "Set Armbian builder signature."
         required: false
@@ -431,6 +430,7 @@ jobs:
           kernel_usage: ${{ inputs.kernel_usage }}
           kernel_sign: ${{ inputs.kernel_sign }}
           armbian_fstype: ${{ inputs.armbian_fstype }}
+          armbian_size: ${{ inputs.armbian_size }}
           builder_name: ${{ inputs.builder_name }}
 
       - name: Upload Armbian images to Release
