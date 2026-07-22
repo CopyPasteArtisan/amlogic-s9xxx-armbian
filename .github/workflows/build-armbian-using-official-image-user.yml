@@ -12,7 +12,7 @@ on:
       armbian_url:
         description: "Set the Armbian source image URL."
         required: false
-        default: ""
+        default: "https://fi.mirror.armbian.de/oldarchive/khadas-vim2/archive/Armbian_23.11.1_Khadas-vim2_jammy_current_6.1.63_minimal.img.xz"
       armbian_board:
         description: "Select device board."
         required: false
@@ -274,6 +274,7 @@ on:
         default: "CopyPasteArtisan/kernel"
         type: choice
         options:
+          - CopyPasteArtisan/kernel
           - ophub/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
@@ -315,6 +316,7 @@ on:
         default: "user"
         type: choice
         options:
+          - user
           - ophub
           - angel
           - yourname
