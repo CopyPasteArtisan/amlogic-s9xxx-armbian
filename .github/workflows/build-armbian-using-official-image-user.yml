@@ -306,8 +306,9 @@ on:
         description: "Select armbian image size."
         type: choice
         required: false
-        default: "250/1331"
+        default: "250/1332"
         options:
+          - 250/1332
           - 250/1536
           - 512/2560
       builder_name:
