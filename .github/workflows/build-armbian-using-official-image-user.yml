@@ -306,10 +306,10 @@ on:
         description: "Select armbian image size."
         type: choice
         required: false
-        default: "250/1332"
+        default: "256/2048"
         options:
-          - 250/1332
-          - 250/1536
+          - 256/2048
+          - 256/2560
           - 512/2560
       builder_name:
         description: "Set Armbian builder signature."
